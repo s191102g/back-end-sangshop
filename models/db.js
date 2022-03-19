@@ -11,4 +11,7 @@ db.connect(() => console.log('Da ket noi database !'));
 db.on('error', function(err) {
     console.log(err.code);
   });
+setInterval(function () {
+    db.query('SELECT 1');
+}, 5000);
 module.exports = db; 

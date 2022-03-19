@@ -7,4 +7,8 @@ var db = mysql.createConnection({
 } );
 
 db.connect(() => console.log('Da ket noi database !'));
+
+db.on('error', function(err) {
+    console.log(err.code);
+  });
 module.exports = db; 

@@ -12,13 +12,10 @@ exports.listHot= function(callback) {
     let sql = 'SELECT * FROM product  order by view  desc limit 5'    
     db.query(sql, function(err, d) { callback(d); }  );
 }
-
 exports.listSale= function(callback) {
     let sql = 'SELECT * FROM product  order by price asc  limit 5'    
     db.query(sql, function(err, d) { callback(d); }  );
 }
-
-
 exports.getPrdbyCate= function(id, callback) {
     let sql = 'SELECT * FROM product WHERE idCT = ?'    
     db.query(sql, id, (err, data) => {
@@ -37,6 +34,13 @@ exports.update = function(id, data, callback) {
         callback();
     });    
 } 
+exports.delete = function(id,data,callback){
+    let sql = 'DELETE FROM product WHERE id = ?'
+    db.query(sql, id , (err, d) => {
+        if (err) throw err;
+        callback();
+    });
+}
 exports.read= function(id, callback) {
     let sql = 'SELECT * FROM product WHERE id = ?'    
     db.query(sql, id, (err, d) => {

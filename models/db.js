@@ -5,7 +5,6 @@ var db = mysql.createConnection({
     password: '6b304aef',
     database: 'heroku_db08387a40c3c0f'
 } );
-
 db.connect(() => console.log('Da ket noi database !'));
 
 db.on('error', function(err) {

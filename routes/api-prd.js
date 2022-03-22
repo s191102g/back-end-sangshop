@@ -51,4 +51,12 @@ router.put("/:id", (req, res) => {
     res.json({ pp: "Update sucssesfully " });
   });
 });
+
+router.delete("/:id", (req, res)=>{
+  let data = req.body;
+  let id = req.params.id;
+  modelPrd.delete(id, data, function (){
+    res.json({ pp: "delete sucssesfully " });
+  })
+})
 module.exports = router;

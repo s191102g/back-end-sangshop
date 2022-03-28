@@ -1,12 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var modelCate = require("../models/categories_models");
+var apiCateController = require("../controller/apiCateController");
 
-
-router.get("/", function (req, res, next) {
-    modelCate.list((data) => {
-      res.json(data);
-    });
-  });
-  
-  module.exports = router;
+router.get("/", apiCateController.index );
+router.post("/", apiCateController.addNewCate);
+router.put("/:id" , apiCateController.fixCate);
+router.delete("/:id", apiCateController.deleteCate);
+module.exports = router;

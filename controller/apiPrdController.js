@@ -1,4 +1,4 @@
-class apiPrdController {
+class ApiPrdController {
 
     index(){
         (req, res, next) => {
@@ -9,4 +9,4 @@ class apiPrdController {
     }
 }
 
-module.exports = apiPrdController;
+module.exports = new ApiPrdController;

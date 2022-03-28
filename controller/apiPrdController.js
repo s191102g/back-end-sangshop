@@ -1,3 +1,4 @@
+var modelPrd = require("../models/prd_models");
 class ApiPrdController {
 
     index(req, res, next){

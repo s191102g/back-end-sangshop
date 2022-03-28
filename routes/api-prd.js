@@ -1,13 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var modelPrd = require("../models/prd_models");
-
+var apiPrdController = require("../controller/apiPrdController")
 /* GET home page. */
-router.get("/", function (req, res, next) {
-  modelPrd.list((data) => {
-    res.json(data);
-  });
-});
+router.get("/", apiPrdController.index);
 
 router.get("/hot-prd", function (req, res, next) {
   modelPrd.listHot((data) => {

@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -10,7 +11,7 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var apiProduct = require('./routes/api-prd');
 var apiCate = require('./routes/api-cate');
-
+var userAuth = require('./routes/user')
 var app = express();
 
 // view engine setup
@@ -28,6 +29,7 @@ app.use(cors());
 app.use('/', indexRouter);
 app.use('/api-prd', apiProduct);
 app.use('/api-cate', apiCate);
+app.use('/user', userAuth);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

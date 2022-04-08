@@ -1,9 +1,9 @@
 var mysql = require('mysql');
 var db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASS,
-    database: process.env.DATABASE
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'b4974887c1c471',
+    password: '6b304aef',
+    database: 'heroku_db08387a40c3c0f'
 } );
 
 // var db = mysql.createConnection({

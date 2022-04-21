@@ -42,12 +42,6 @@ class User{
          
     }
 
-    test(req,res,next){
-        
-        modelUser.checkUser((data)=>{
-              res.json(data)
-        })
-    }
 }
 
 module.exports = new User();

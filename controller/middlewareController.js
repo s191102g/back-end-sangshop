@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken")
 
 class middlewareController{
     verifyToken(req,res,next){
+      
         const token = req.cookies.token;
         if (token) {
             const accessToken = token;
@@ -15,7 +16,7 @@ class middlewareController{
                         throw err;
                        
                     }
-                    req.user = user;
+                    req.id = user.id
                     next();
                 }
             )

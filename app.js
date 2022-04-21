@@ -11,6 +11,7 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var apiProduct = require('./routes/api-prd');
 var apiCate = require('./routes/api-cate');
+var apiCart = require('./routes/api-cart');
 var userAuth = require('./routes/user')
 var app = express();
 
@@ -30,6 +31,7 @@ app.use('/', indexRouter);
 app.use('/api-prd', apiProduct);
 app.use('/api-cate', apiCate);
 app.use('/user', userAuth);
+app.use('/api-cart', apiCart);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

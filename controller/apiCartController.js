@@ -27,6 +27,11 @@ class ApiCartController {
 
     });
   }
+
+
+  addCart(req,res) {
+    
+  }
 }
 
 module.exports = new ApiCartController();

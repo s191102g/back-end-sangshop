@@ -14,10 +14,13 @@ class middlewareController{
                     if (err) {
                         res.status(403).json("Token is not valid")
                         throw err;
-                       
+                        
                     }
-                    req.id = user.id
-                    next();
+                        
+                        req.id = user.id
+                        next();
+                    
+                   
                 }
             )
         }else{

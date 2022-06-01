@@ -5,7 +5,10 @@ class ApiCartController {
     let idUser = req.id;
 
     modelCart.getIdOrder(idUser, (data) => {
-      let id_order = data;
+      if (data == null) {
+        res.json("Don't have cart")
+      }else{
+        let id_order = data;
       modelCart.getIdPrd(id_order, (data) => {
         let mycart = data;
         let Cart = []
@@ -23,6 +26,8 @@ class ApiCartController {
        
 
       });
+      }
+      
 
 
     });
